@@ -63,7 +63,12 @@ input{background:#080812;border:1px solid var(--line);padding:12px;color:white;b
 const keyNames=['ESC','1','2','3','4','5','6','7','8','9','0','-','=','⌫','TAB','Q','W','E','R','T','Y','U','I','O','P','[',']','ENTER','CAPS','A','S','D','F','G','H','J','K','L',';',"'",'SHIFT','Z','X','C','V','B','N','M',',','.','/','SHIFT','CTRL','FN','ALT','SPACE','ALT','CTRL'];
 document.getElementById('keys').innerHTML=keyNames.map(k=>`<div class="key">${k}</div>`).join('');
 let cart=0;function addCart(){cart++;document.getElementById('count').textContent=cart;document.getElementById('notice').textContent='Produk ditambahkan ke keranjang (simulasi).'}
-function buyNow(){document.getElementById('notice').textContent='Tombol beli masih berupa simulasi. Tambahkan tautan pemesanan toko sebelum digunakan.'}
+function buyNow(){
+  const nomor = "6283190121693";
+  const pesan = "Halo JONA GEAR, saya ingin memesan Razer BlackWidow V4. Apakah produknya tersedia?";
+  const url = "https://wa.me/" + nomor + "?text=" + encodeURIComponent(pesan);
+  window.open(url, "_blank");
+}
 function toggleFaq(el){el.parentElement.classList.toggle('open');el.querySelector('span').textContent=el.parentElement.classList.contains('open')?'−':'＋'}
 </script>
 </body></html>
